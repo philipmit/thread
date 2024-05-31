@@ -1,0 +1,141 @@
+task	dc_answer
+Question: According to data from 2014 to 2020 is the rate of individuals aged 64 and under without health insurance expected to be lower in Pennsylvania or Kamuela Hawaii in 2030?	Pennsylvania
+Question: Was the minimum value from 2018 to 2020 of the incidence rate of poor physical health lower in Maine or Humbird Wisconsin?	Maine
+Question: Was the rate of individuals aged 64 and under without health insurance in New Mexico in 2018 higher or lower than the national average?	higher
+Question: Will the incidence rate of binge drinking be higher in Utah or Lindrith New Mexico in 2038 based on the data from 2015 to 2017?	Lindrith New Mexico
+Question: Compared to New York was the average value from 2014 to 2020 of the rate of individuals aged 20 and above diagnosed with diabetes higher or lower in Capitol Montana?	lower
+Question: Compared to Wisconsin was the minimum value from 2008 to 2010 of the prevalence of females aged 50 to 64 without health insurance higher or lower in Wyoming?	higher
+Question: Based on the data from 2018 to 2020 in Dubre Kentucky is the prevalence rate of arthritis expected to increase or decrease going forward?	decrease
+Question: From 2012 to 2018 was the minimum value of the proportion of women ages 21 to 65 who received a Pap smear test higher in Pennsylvania or South Carolina?	Pennsylvania
+Question: Was the proportion of women ages 50 to 74 who have received a mammography higher in Great Falls South Carolina or NUCKOLLS Nebraska in 2018?	NUCKOLLS Nebraska
+Question: From 2018 to 2021 was the minimum value of the frequency of chronic obstructive pulmonary disease occurrence higher in West Columbia South Carolina or BURLINGTON New Jersey?	West Columbia South Carolina
+Question: Was the average value from 2017 to 2019 of the prevalence rate of vision impairment in adults higher in Piseco New York or Switzer West Virginia?	Piseco New York
+Question: In 2018 was the frequency of poor physical health lower in Cumberland Center Maine or JEFFERSON DAVIS Louisiana?	Cumberland Center Maine
+Question: Compared to Michigan was the prevalence of individuals receiving their annual checkup higher or lower in Delaware in 2016?	higher
+Question: From 2018 to 2022 was the average value of the proportion of females aged 50 to 64 who have health insurance lower in South Dakota or MAVERICK Texas?	South Dakota
+Question: Was the average value from 2014 to 2017 of the rate of individuals aged 21 to 64 who lack health insurance higher in Louisiana or Montana?	Louisiana
+Question: Compared to Seneca Rocks West Virginia was the proportion of individuals who had a dental visit higher or lower in Indiana in 2018?	higher
+Question: Compared to Mc Cook Nebraska was the average value from 2018 to 2021 of the rate of females aged 40 to 64 who do not have health insurance higher or lower in Idaho?	higher
+Question: Was the minimum value from 2018 to 2020 of the occurrence rate of coronary heart disease lower in Montana or Virgin Islands?	Montana
+Question: Compared to CAMAS Idaho was the proportion of senior females who received core preventive services higher or lower in North Carolina in 2018?	lower
+Question: From 2018 to 2022 was the maximum value of the proportion of females aged 21 to 64 who have health insurance lower in Doswell Virginia or Texas?	Doswell Virginia
+Question: Was the minimum value from 2018 to 2021 of the prevalence of asthma incidents lower in Langford South Dakota or Michigan?	Langford South Dakota
+Question: Was the average value from 2018 to 2020 of the prevalence of chronic kidney disease higher in Marquez Texas or Ohio?	Marquez Texas
+Question: Was the average value from 2015 to 2019 of the prevalence of high blood pressure higher in GEM Idaho or Delaware?	Delaware
+Question: Was there a positive or negative correlation in the prevalence of individuals receiving their annual checkup in Indiana and Kentucky from 2016 to 2018?	positive
+Question: According to data from 2014 to 2018 is the proportion of senior males who received core preventive services expected to be lower in Washington or Maine in 2034?	Maine
+Question: Based on the data from 2018 to 2020 in Maine is the rate of cancer occurrence excluding skin cancer expected to increase or decrease going forward?	decrease
+Question: Was the prevalence of chronic kidney disease in Iowa in 2018 higher or lower than the national average?	lower
+Question: Was the average value from 2017 to 2021 of the occurrence rate of high cholesterol higher in North Aurora Illinois or Solsville New York?	Solsville New York
+Question: From 2018 to 2020 was the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance higher in Rothbury Michigan or Derwood Maryland?	Rothbury Michigan
+Question: Was the rate of males aged 64 and under without health insurance higher in Colorado or Kansas in 2012?	Colorado
+Question: Based on the data from 2018 to 2020 in Arizona is the occurrence rate of smoking expected to increase or decrease going forward?	decrease
+Question: From 2018 to 2020 was the maximum value of the rate of individuals aged 20 and above diagnosed with diabetes lower in CHELAN Washington or Kentucky?	CHELAN Washington
+Question: Will the proportion of females aged 40 to 64 who have health insurance be higher in VAN ZANDT Texas or Ivydale West Virginia in 2028 based on the data from 2018 to 2020?	VAN ZANDT Texas
+Question: Was the minimum value from 2014 to 2016 of the occurrence rate of full teeth loss lower in Georgia or Wisconsin?	Wisconsin
+Question: Compared to SPINK South Dakota was the average value from 2018 to 2020 of the prevalence of health insurance coverage higher or lower in Connecticut?	higher
+Question: Based on the data from 2018 to 2020 in Virginia is the rate of individuals aged 20 and above diagnosed with diabetes expected to increase or decrease going forward?	increase
+Question: According to data from 2018 to 2020 is the rate of individuals aged 21 to 64 who have health insurance coverage expected to be lower in GRAYSON Texas or Nevada in 2033?	GRAYSON Texas
+Question: From 2017 to 2020 was the maximum value of the rate of individuals aged 40 to 64 who have health insurance coverage lower in Oregon or Indiana?	Oregon
+Question: Was the minimum value from 2018 to 2022 of the proportion of males aged 40 to 64 who have health insurance lower in Floral Arkansas or Oklahoma?	Floral Arkansas
+Question: Was there a positive or negative correlation in the incidence rate of any form of disability in adults in Saint Nazianz Wisconsin and New Mexico from 2018 to 2022?	positive
+Question: Was there a positive or negative correlation in the occurrence rate of coronary heart disease in Indiana and RVC New York from 2016 to 2020?	positive
+Question: Compared to Massachusetts was the average value from 2015 to 2018 of the incidence of hearing disability in adults higher or lower in Idaho?	lower
+Question: Based on the data from 2018 to 2020 in Fisty Kentucky is the percentage of individuals who visited the dentist expected to increase or decrease going forward?	decrease
+Question: Will the proportion of women ages 50 to 74 who have received a mammography be higher in Massachusetts or COOKE Texas in 2031 based on the data from 2007 to 2009?	Massachusetts
+Question: Using data from 2015 to 2018 in Kansas is the prevalence of obesity in individuals aged 20 and above expected to be above or below Indiana in 2034?	below
+Question: Was the prevalence rate of diabetes in the population in Ohio in 2018 higher or lower than the national average?	higher
+Question: According to data from 2016 to 2021 is the rate of asthma occurrence in children expected to be lower in New Jersey or Virginia in 2025?	New Jersey
+Question: Was the incidence rate of poor physical health in Delaware in 2018 higher or lower than the national average?	higher
+Question: Was the maximum value from 2018 to 2020 of the prevalence of individuals getting less than 7 hours of sleep higher in Apison Tennessee or Florida?	lower
+Question: Compared to KANAWHA West Virginia was the average value from 2018 to 2021 of the rate of asthma higher or lower in Maine?	higher
+Question: In 2010 was the proportion of women ages 21 to 65 who received cervical cancer screening lower in Majestic Kentucky or Kentucky?	Kentucky
+Question: In NOTTOWAY Virginia was the percentage of individuals who have received cholesterol screening increasing or decreasing from 2013 to 2015?	increasing
+Question: Using data from 2018 to 2020 in Mississippi is the proportion of men over 65 who have received core preventive health services expected to be above or below Nikolai Alaska in 2034?	above
+Question: From 2018 to 2022 was the maximum value of the proportion of females aged 50 to 64 who have health insurance lower in Mineville New York or Mc Caskill Arkansas?	Mineville New York
+Question: Was the minimum value from 2018 to 2020 of the prevalence rate of physical inactivity lower in Bonnots Mill Missouri or Tecumseh Oklahoma?	Bonnots Mill Missouri
+Question: From 2018 to 2020 was the rate of complete tooth loss in seniors increasing faster in SANDUSKY Ohio or Vermont?	SANDUSKY Ohio
+Question: Will the occurrence rate of high cholesterol be higher in Wyoming or Colorado in 2037 based on the data from 2013 to 2017?	Wyoming
+Question: From 2011 to 2016 was the average value of the proportion of women ages 21 to 65 who received a Pap smear test lower in Two Buttes Colorado or Kansas?	Two Buttes Colorado
+Question: Compared to Port Hueneme Cbc Base California was the minimum value from 2018 to 2020 of the frequency of binge drinking incidents higher or lower in Colorado?	higher
+Question: From 2015 to 2018 was the prevalence of coronary heart disease increasing faster in Indiana or GILCHRIST Florida?	GILCHRIST Florida
+Question: In 2016 was the prevalence of individuals getting less than 7 hours of sleep lower in Wyoming or CALAVERAS California?	Wyoming
+Question: Was there a positive or negative correlation in the prevalence of poor general health in adults in West Middleton Indiana and Indian River Michigan from 2018 to 2020?	positive
+Question: In Minnesota was the prevalence rate of individuals diagnosed with asthma increasing or decreasing from 2015 to 2021?	increasing
+Question: Using data from 2019 to 2022 in Lepanto Arkansas is the prevalence of health insurance coverage expected to be above or below ALLEN Indiana in 2036?	below
+Question: Was there a positive or negative correlation in the incidence of cognitive disability in adults in New Hampshire and Moatsville West Virginia from 2015 to 2021?	negative
+Question: Compared to Idaho was the average value from 2019 to 2022 of the proportion of males aged 21 to 64 who have health insurance higher or lower in North Carolina?	higher
+Question: From 2018 to 2021 was the minimum value of the rate of cancer occurrence excluding skin cancer higher in EDGAR Illinois or Missouri?	EDGAR Illinois
+Question: Was there a positive or negative correlation in the prevalence rate of obesity in North Carolina and Alabama from 2014 to 2016?	positive
+Question: Will the proportion of women ages 21 to 65 who received cervical cancer screening be higher in COFFEY Kansas or Keenes Illinois in 2037 based on the data from 2018 to 2020?	Keenes Illinois
+Question: Was there a positive or negative correlation in the incidence rate of high blood pressure in Rhode Island and TORRANCE New Mexico from 2013 to 2015?	positive
+Question: Was the proportion of individuals who have had their annual checkup higher in Louisiana or Cammal Pennsylvania in 2015?	Cammal Pennsylvania
+Question: According to data from 2014 to 2016 is the proportion of individuals who have had their annual checkup expected to be lower in Montana or Missouri in 2030?	Montana
+Question: In Maryland was the prevalence of individuals getting less than 7 hours of sleep increasing or decreasing from 2016 to 2018?	decreasing
+Question: In 2018 was the rate of individuals aged 50 to 64 who have health insurance lower in Orange Lake Florida or Lemmon South Dakota?	Orange Lake Florida
+Question: Was the minimum value from 2018 to 2021 of the prevalence of individuals diagnosed with diabetes lower in Maunaloa Hawaii or Nebraska?	Nebraska
+Question: Was the rate of physical inactivity in individuals aged 20 and above in Arizona in 2018 higher or lower than the national average?	lower
+Question: Compared to Mogadore Ohio was the average value from 2019 to 2021 of the proportion of males aged 50 to 64 who have health insurance higher or lower in California?	higher
+Question: Was the rate of individuals aged 50 to 75 who underwent colorectal cancer screening higher in Kansas or Delaware in 2008?	Kansas
+Question: Compared to BOWMAN North Dakota was the proportion of adults with high blood pressure who are on medication higher or lower in Anselmo Nebraska in 2017?	higher
+Question: In 2018 was the occurrence rate of smoking lower in Shady Dale Georgia or Sandusky Ohio?	Shady Dale Georgia
+Question: From 2017 to 2020 was the average value of the proportion of females aged 40 to 64 who have health insurance lower in CULPEPER Virginia or Hawaii?	CULPEPER Virginia
+Question: Compared to GALLATIN Illinois was the minimum value from 2017 to 2020 of the rate of adults experiencing independent living disability higher or lower in South Dakota?	higher
+Question: Based on the data from 2018 to 2020 in San Ysidro California is the incidence rate of poor physical health expected to increase or decrease going forward?	decrease
+Question: Using data from 2014 to 2016 in West Virginia is the prevalence of depression in individuals aged 18 and above expected to be above or below Vermont in 2040?	below
+Question: Compared to Pennsylvania was the occurrence rate of smoking higher or lower in Cerulean Kentucky in 2018?	higher
+Question: Will the prevalence of males aged 50 to 64 without health insurance be higher in Oklahoma or Alaska in 2025 based on the data from 2008 to 2010?	Oklahoma
+Question: Was the average value from 2018 to 2021 of the rate of adults reporting poor general health higher in Stark City Missouri or North Carolina?	Stark City Missouri
+Question: From 2018 to 2020 was the minimum value of the rate of adults experiencing any form of disability higher in Kentucky or Klickitat Washington?	Kentucky
+Question: Compared to Speed North Carolina was the rate of cognitive disability in adults higher or lower in Nebraska in 2017?	higher
+Question: Compared to Texas was the average value from 2016 to 2020 of the prevalence of obesity in individuals aged 20 and above higher or lower in WELLS Indiana?	higher
+Question: From 2017 to 2021 was the average value of the proportion of males aged 64 and below who have health insurance lower in THROCKMORTON Texas or Ridgway Pennsylvania?	THROCKMORTON Texas
+Question: In 2015 was the rate of depression in adults lower in Sacul Texas or Nebraska?	Nebraska
+Question: Using data from 2018 to 2020 in Pipestone Minnesota is the rate of individuals aged 50 to 75 who underwent colorectal cancer screening expected to be above or below Norcatur Kansas in 2039?	below
+Question: In Maine was the prevalence of uninsured individuals aged 40 to 64 increasing or decreasing from 2016 to 2018?	increasing
+Question: Was there a positive or negative correlation in the rate of senior females obtaining core preventive services in Maine and BURLESON Texas from 2018 to 2020?	positive
+Question: Was the prevalence of depression in individuals aged 18 and above higher in West Virginia or BRADLEY Arkansas in 2018?	West Virginia
+Question: From 2013 to 2015 was the occurrence rate of high cholesterol increasing faster in Vermont or CLALLAM Washington?	Vermont
+Question: Was the minimum value from 2016 to 2020 of the proportion of senior males who received core preventive services lower in Virginia or West Virginia?	Virginia
+Question: Compared to Arizona was the incidence of cancer excluding skin cancer higher or lower in TIFT Georgia in 2015?	lower
+Question: Will the prevalence rate of diabetes in the population be higher in Armona California or IBERIA Louisiana in 2029 based on the data from 2018 to 2021?	Armona California
+Question: Compared to OWYHEE Idaho was the rate of uninsured individuals aged 18 to 64 higher or lower in PENDER North Carolina in 2018?	lower
+Question: Using data from 2018 to 2020 in Slocomb Alabama is the incidence rate of poor mental health conditions expected to be above or below Waitsburg Washington in 2034?	below
+Question: Was the minimum value from 2018 to 2021 of the prevalence of individuals receiving their annual checkup lower in Vandergrift Pennsylvania or CHELAN Washington?	CHELAN Washington
+Question: In 2018 was the rate of individuals aged 50 to 75 who underwent colorectal cancer screening lower in PECOS Texas or TROUP Georgia?	PECOS Texas
+Question: In 2016 was the prevalence rate of arthritis lower in Saint Inigoes Maryland or Tennessee?	Saint Inigoes Maryland
+Question: Compared to Utah was the average value from 2015 to 2020 of the rate of cancer occurrence excluding skin cancer higher or lower in Nebraska?	higher
+Question: From 2014 to 2016 was the average value of the incidence rate of poor mental health conditions lower in Alaska or Fisherville Kentucky?	Alaska
+Question: Was the minimum value from 2018 to 2020 of the proportion of females aged 50 to 64 who have health insurance lower in Alaska or Colorado?	Alaska
+Question: Compared to New Hampshire was the minimum value from 2018 to 2020 of the rate of individuals aged 21 to 64 who have health insurance coverage higher or lower in AGUADA Puerto Rico?	higher
+Question: Was the minimum value from 2018 to 2021 of the prevalence of uninsured individuals aged 40 to 64 lower in Clearlake Oaks California or Wyoming?	Clearlake Oaks California
+Question: Compared to New York was the maximum value from 2018 to 2021 of the rate of asthma occurrence in children higher or lower in Kilgore Texas?	New York
+Question: Will the prevalence of chronic obstructive pulmonary disease be higher in Michigan or BULLOCK Alabama in 2031 based on the data from 2015 to 2018?	BULLOCK Alabama
+Question: Compared to Virgin Islands was the average value from 2018 to 2020 of the proportion of individuals who had a dental visit higher or lower in Kaleva Michigan?	lower
+Question: From 2016 to 2018 was the average value of the prevalence rate of individuals aged 18 to 64 who have health insurance lower in South Carolina or LONG Georgia?	South Carolina
+Question: According to data from 2016 to 2018 is the prevalence rate of arthritis expected to be lower in Coral Michigan or Wisconsin in 2038?	Coral Michigan
+Question: In Wyoming was the prevalence of poor general health in adults increasing or decreasing from 2015 to 2021?	decreasing
+Question: In Section Alabama was the rate of individuals aged 20 and above diagnosed with diabetes increasing or decreasing from 2018 to 2020?	decreasing
+Question: From 2008 to 2013 was the minimum value of the rate of males aged 64 and under without health insurance higher in Colorado or Kansas?	Colorado
+Question: According to data from 2018 to 2021 is the prevalence rate of chronic kidney disease expected to be lower in WHEATLAND Montana or Kansas in 2039?	Kansas
+Question: Will the rate of individuals aged 64 and under without health insurance be higher in Kirtland AFB New Mexico or Bent New Mexico in 2039 based on the data from 2018 to 2021?	Kirtland AFB New Mexico
+Question: From 2018 to 2020 was the frequency of binge drinking incidents increasing faster in Oberlin Ohio or Mount Ephraim New Jersey?	Oberlin Ohio
+Question: From 2018 to 2020 was the maximum value of the rate of asthma lower in New Hampshire Ohio or Sylva North Carolina?	Sylva North Carolina
+Question: From 2018 to 2020 was the frequency of chronic obstructive pulmonary disease occurrence increasing faster in Clyde Park Montana or Colorado?	Clyde Park Montana
+Question: In 2015 was the frequency of binge drinking incidents lower in KODIAK ISLAND Alaska or Indiana?	Indiana
+Question: Was the prevalence of children and teenagers up to the age of 18 without health insurance in Utah in 2018 higher or lower than the national average?	higher
+Question: Was there a positive or negative correlation in the occurrence rate of full teeth loss in Pennsylvania and Texas from 2014 to 2016?	positive
+Question: Using data from 2016 to 2020 in Vermont is the prevalence rate of physical inactivity expected to be above or below San Marcos California in 2040?	below
+Question: In Flat Rock Michigan was the prevalence rate of arthritis increasing or decreasing from 2018 to 2021?	decreasing
+Question: From 2018 to 2021 was the prevalence of obesity in individuals aged 20 and above increasing faster in Vermont or MARICOPA Arizona?	Vermont
+Question: According to data from 2014 to 2021 is the prevalence of obesity in individuals aged 20 and above expected to be lower in Alabama or New Mexico in 2034?	Alabama
+Question: From 2014 to 2017 was the maximum value of the rate of individuals aged 50 to 75 who underwent colorectal cancer screening lower in Walburg Texas or Arkansas?	Walburg Texas
+Question: Using data from 2019 to 2021 in Micro North Carolina is the rate of individuals aged 40 to 64 who have health insurance coverage expected to be above or below Oklahoma in 2037?	below
+Question: Was the proportion of women ages 21 to 65 who received cervical cancer screening higher in Draper South Dakota or Ravenden Arkansas in 2018?	Ravenden Arkansas
+Question: Was the maximum value from 2017 to 2020 of the prevalence of self-care disability in adults higher in Virgin Islands or Vermont Illinois?	higher
+Question: In 2014 was the rate of physical inactivity in individuals aged 20 and above lower in Minnesota or Pennsylvania?	Minnesota
+Question: According to data from 2012 to 2015 is the rate of males aged 18 to 64 without health insurance expected to be lower in West Virginia or Vermont in 2033?	West Virginia
+Question: Compared to OSCODA Michigan was the maximum value from 2018 to 2020 of the rate of senior females obtaining core preventive services higher or lower in Wainscott New York?	Wainscott New York
+Question: In 2018 was the frequency of complete tooth loss in individuals aged 65 or older lower in Maine or Vermont?	Vermont
+Question: From 2010 to 2015 was the average value of the proportion of women ages 50 to 74 who have received a mammography lower in Sacul Texas or Connecticut?	Sacul Texas
+Question: Was the average value from 2018 to 2020 of the proportion of senior females who received core preventive services higher in MORGAN Kentucky or New York?	MORGAN Kentucky
