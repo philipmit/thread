@@ -1,0 +1,37 @@
+Prompt:
+I need to retrieve search results for deodorant that are less than 50.00 dollars with the attributes: ['3 ounce bottle', 'Bright citrus', 'For sensitive skin']. =>
+
+
+
+Response:
+#START#
+My sub-task is to retrieve search results for deodorant that are less than 50.00 dollars with the attributes: ['3 ounce bottle', 'Bright citrus', 'For sensitive skin'].
+
+> search[deodorant; '3 ounce bottle'; 'Bright citrus'; 'For sensitive skin'] =>
+[Back to Search] 
+Page 1 (Total results: 50) 
+[Next >] 
+[B08KBVJ4XN] 
+Barrel and Oak - Aluminum-Free Deodorant, Deodorant for Men, Essential Oil-Based Scent, 24-Hour Odor Protection, Cedar & Patchouli Blend, Gentle on Sensitive Skin (Mountain Sage, 1 oz, 2-Pack)  
+$15.95  
+[B078GWRC1J] 
+Bright Citrus Deodorant by Earth Mama | Pregnancy and Breastfeeding, Contains Organic Calendula 3-Ounce 
+$10.99 
+[B078GTKVXY] 
+Ginger Fresh Deodorant by Earth Mama | Pregnancy and Breastfeeding, Contains Organic Calendula 3-Ounce 
+$60.99
+<=
+
+I will now filter for results that are less than 50.00.
+
+The price of B08KBVJ4XN is 15.95.
+
+The price of B078GWRC1J is 10.99.
+
+The price of B078GTKVXY is 60.99.
+
+B08KBVJ4XN and B078GWRC1J are less than 50.00.
+
+Validate: Since I have retrieved search results for deodorant that are less than 50.00 dollars with the attributes: ['3 ounce bottle', 'Bright citrus', 'For sensitive skin'], my sub-task is complete.
+print('You have retrieved [B08KBVJ4XN, B078GWRC1J].')
+#END#

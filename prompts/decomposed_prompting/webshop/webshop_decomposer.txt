@@ -1,0 +1,16 @@
+Prompt:
+Instruction: i would like a 3 ounce bottle of bright citrus deodorant for sensitive skin, and price lower than 50.00 dollars 
+[SEARCH]
+
+
+
+Response:
+#START#
+I need to perform the following 3 steps:
+
+First, I need to retrieve search results for deodorant that are less than 50.00 dollars with the attributes: 3 ounce bottle, bright citrus deodorant, for sensitive skin, price lower than 50.00 dollars. =>You have retrieved ['B08KBVJ4XN', 'B078GWRC1J'].<=
+
+Next, I need to identify the item in ['B08KBVJ4XN', 'B078GWRC1J'] that matches the most attributes: ['3 ounce bottle', 'Bright citrus', 'For sensitive skin']. =>You have identified B078GWRC1J.<=
+
+Finally, I need to purchase B078GWRC1J with ['3 ounce bottle', 'Bright citrus', 'For sensitive skin']. =>You have purchased B078GWRC1J.<=
+#END#
