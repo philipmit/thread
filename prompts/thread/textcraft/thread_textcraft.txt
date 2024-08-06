@@ -1,0 +1,187 @@
+Prompt:
+Crafting commands:
+craft 3 dark oak sign using 6 dark oak planks, 1 stick
+craft 4 dark oak planks using 1 dark oak log
+craft 1 stick using 1 planks
+craft 4 stick using 2 bamboo
+craft 4 oak planks using 1 oak log
+craft 1 dark oak fence using 2 stick, 4 dark oak planks
+craft 1 warped stairs using 6 warped planks
+craft 3 oak sign using 6 oak planks, 1 stick
+Goal: craft dark oak sign.
+
+
+Response:
+#START#
+craft_command_list = ['craft 3 dark oak sign using 6 dark oak planks, 1 stick', 'craft 4 dark oak planks using 1 dark oak log', 'craft 1 stick using 1 planks', 'craft 4 stick using 2 bamboo', 'craft 4 oak planks using 1 oak log', 'craft 1 dark oak fence using 2 stick, 4 dark oak planks', 'craft 1 warped stairs using 6 warped planks', 'craft 3 oak sign using 6 oak planks, 1 stick']
+craft_command_item_list = ['dark oak sign', 'dark oak planks', 'stick', 'stick', 'oak planks', 'dark oak fence', 'warped stairs', 'oak sign']
+target_item = 'dark oak sign'
+target_item_count_total = 1
+idx = craft_command_item_list.index(min([x for x in craft_command_item_list if target_item in x], key=len))
+target_item = craft_command_item_list[idx]
+target_craft_command = craft_command_list[idx]
+
+To craft {target_item}, I need to perform the following action until I have at least {target_item_count_total} {target_item}: {target_craft_command} =>You have completed the action.<=
+
+#END#
+
+
+
+
+
+
+Prompt:
+I need to perform the following action until I have at least 1 dark oak sign: craft 3 dark oak sign using 6 dark oak planks, 1 stick =>
+
+
+Response:
+#START#
+target_item = 'dark oak sign'
+target_item_count_total = 1
+target_craft_command_result_count = 3
+precursor1 = 'dark oak planks'
+precursor1_count_command = 6
+precursor2 = 'stick'
+precursor2_count_command = 1
+
+I first need to determine how many times I need to perform the action.
+
+Since I need at least 1 {target_item} and each action produces 3 {target_item}, The number of times I need to perform the action is ceiling of 1/3, which is 1.
+
+target_craft_command_reps = 1
+precursor1_count_total = precursor1_count_command * target_craft_command_reps
+precursor1_count_total = precursor2_count_command * target_craft_command_reps
+
+Next, I need to get or craft {precursor1}.
+
+To start, I first need to check if I can get {precursor1_count_total} {precursor1}. =>You cannot get the material.<=
+
+Since I cannot get {precursor1}, I need to craft it.
+
+idx = craft_command_item_list.index(min([x for x in craft_command_item_list if precursor1 in x], key=len))
+precursor1 = craft_command_item_list[idx]
+precursor1_craft_command = craft_command_list[idx]
+
+To craft {precursor1}, I need to perform the following action until I have at least {precursor1_count_total} {precursor1}: {precursor1_craft_command} =>You have completed the action.<=
+
+Next, I need to get or craft {precursor2}.
+
+To start, I first need to check if I can get {precursor2_count_total} {precursor2}. =>You cannot get the material.<=
+
+Since I cannot get {precursor2}, I need to craft it.
+
+idx = craft_command_item_list.index(min([x for x in craft_command_item_list if precursor2 in x], key=len))
+precursor2 = craft_command_item_list[idx]
+precursor2_craft_command = craft_command_list[idx]
+
+To craft {precursor2}, I need to perform the following action until I have at least {precursor2_count_total} {precursor2}: {precursor2_craft_command} =>You have completed the action.<=
+
+Finally, I will perform the action 1 time.
+
+execute 1
+> craft {target_craft_command_result_count} {target_item} using {precursor1_count_command} {precursor1}, {precursor2_count_command} {precursor2} =>Crafted 3 minecraft:{target_item}.<=
+
+Validate: Since I have executed the action 1 time, my sub-task is complete.
+print('You have completed the action.')
+#END#
+
+
+
+
+
+
+Prompt:
+I need to perform the following action until I have at least 2 dark oak fence: craft 1 dark oak fence using 2 stick, 4 dark oak planks =>
+
+
+Response:
+#START#
+target_item = 'dark oak fence'
+target_item_count_total = 2
+target_craft_command_result_count = 1
+precursor1 = 'stick'
+precursor1_count_command = 2
+precursor2 = 'dark oak planks'
+precursor2_count_command = 4
+
+I first need to determine how many times I need to perform the action.
+
+Since I need at least 2 {target_item} and each action produces 1 {target_item}, The number of times I need to perform the action is ceiling of 2/1, which is 2.
+
+target_craft_command_reps = 2
+precursor1_count_total = precursor1_count_command * target_craft_command_reps
+precursor2_count_total = precursor2_count_command * target_craft_command_reps
+
+Next, I need to get or craft {precursor1}.
+
+To start, I first need to check if I can get {precursor1_count_total} {precursor1}. =>You have the material.<=
+
+Since I have {precursor1}, I do not need to craft it.
+
+Next, I need to get or craft {precursor2}.
+
+To start, I first need to check if I can get {precursor2_count_total} {precursor2}. =>You cannot get the material.<=
+
+Since I cannot get {precursor2}, I need to craft it.
+
+idx = craft_command_item_list.index(min([x for x in craft_command_item_list if precursor2 in x], key=len))
+precursor2 = craft_command_item_list[idx]
+precursor2_craft_command = craft_command_list[idx]
+
+To craft {precursor2}, I need to perform the following action until I have at least {precursor2_count_total} {precursor2}: {precursor2_craft_command} =>You have completed the action.<=
+
+Finally, I will perform the action 2 times.
+
+execute 1
+> craft {target_craft_command_result_count} {target_item} using {precursor1_count_command} {precursor1}, {precursor2_count_command} {precursor2} =>Crafted 1 minecraft:{target_item}.<=
+
+execute 2
+> craft {target_craft_command_result_count} {target_item} using {precursor1_count_command} {precursor1}, {precursor2_count_command} {precursor2} =>Crafted 1 minecraft:{target_item}.<=
+
+Validate: Since I have executed the action 2 times, my sub-task is complete.
+print('You have completed the action.')
+#END#
+
+
+
+
+
+
+Prompt:
+I first need to check if I can get 6 dark oak planks =>
+
+
+Response:
+#START#
+get_item = 'dark oak planks'
+get_item_count_total = 6
+
+> get {get_item_count_total} {get_item} =>Could not find {get_item}.<=
+
+I cannot get the {get_item}.
+
+Validate: Since I have checked if I can get {get_item}, my sub-task is complete.
+print('You cannot get the material.')
+#END#
+
+
+
+
+
+
+Prompt:
+I first need to check if I can get 1 oak logs =>
+
+
+Response:
+#START#
+get_item = 'oak logs'
+get_item_count_total = 1
+
+> get {get_item_count_total} {get_item} =>Got 1 {get_item}.<=
+
+I got {get_item}.
+
+Validate: Since I have checked if I can get {get_item}, my sub-task is complete.
+print('You have the material.')
+#END#
