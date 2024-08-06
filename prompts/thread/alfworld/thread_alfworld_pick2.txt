@@ -1,0 +1,255 @@
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a coffeetable 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a sidetable 2, a sidetable 1, and a sofa 1.
+Your task is to: put two cellphone in sofa.
+
+
+Response:
+[START]
+target_location_ID = 'sofa 1'
+likely_location_IDs_for_obj = ['dresser 1', 'sidetable 2', 'sidetable 1', 'coffeetable 1', 'diningtable 1', 'drawer 4', 'drawer 3', 'drawer 2', 'drawer 1', 'garbagecan 1']
+obj = 'cellphone'
+
+I need to perform the following steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID} from the {current_location_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+likely_location_IDs_for_obj = likely_location_IDs_for_obj[likely_location_IDs_for_obj.index(current_location_ID):]
+
+Now I have to repeat the above steps for the second {obj}.
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID} from the {current_location_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.
+Your task is to: put two saltshaker in drawer.
+
+
+Response:
+[START]
+target_location_ID = 'drawer 1'
+likely_location_IDs_for_obj = ['cabinet 20', 'cabinet 19', 'cabinet 18', 'cabinet 17', 'cabinet 16', 'cabinet 15', 'cabinet 14', 'cabinet 13', 'cabinet 12', 'cabinet 11', 'cabinet 10', 'cabinet 9', 'cabinet 8', 'cabinet 7', 'cabinet 6', 'cabinet 5', 'cabinet 4', 'cabinet 3', 'cabinet 2', 'cabinet 1', 'countertop 3', 'countertop 2', 'countertop 1', 'drawer 3', 'drawer 2', 'coffeemachine 1', 'fridge 1', 'garbagecan 1', 'microwave 1', 'shelf 3', 'shelf 2', 'shelf 1', 'sinkbasin 1', 'stoveburner 4', 'stoveburner 3', 'stoveburner 2', 'stoveburner 1', 'toaster 1']
+obj = 'saltshaker'
+
+I need to perform the following steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID} from the {current_location_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+Now I have to repeat the above steps for the second {obj}.
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID} from the {current_location_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+I need to find and take the cellphone. =>
+
+
+Response:
+[START]
+obj = 'cellphone'
+
+My sub-task is to find the {obj}. I will check the locations in {likely_location_IDs_for_obj} one by one.
+
+location_i = likely_location_IDs_for_obj[0]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[1]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[2]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[3]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[4]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[5]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[6]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[7]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[8]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[9]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[10]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[11]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[12]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[13]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[14]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[15]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[16]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[17]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[18]
+I need to check if there is the {obj} in the {location_i}. =>You have found and taken the {obj_ID} from the {location_i}.<=
+
+You have found and taken the {obj_ID}.
+
+current_location_ID = location_i
+
+Validate: Since I have found and taken the {obj_ID}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {current_location_ID}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the creditcard in the drawer 1. =>
+
+
+Response:
+[START]
+location_i = 'drawer 1'
+obj = 'creditcard'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>The {location_i} is closed.<=
+
+> open {location_i} =>You open the {location_i}. The {location_i} is open. In it, you see a book 1, a cd 1, and a pen 1.<=
+
+obj_IDs_found = ['book 2', 'cd 1', 'pen 1']
+
+obj_number = 'There is no obj_number'
+obj_ID = 'There is no obj_ID'
+
+There is no {obj} in the {location_i}.
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('There is no {obj} in the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the saltshaker in the countertop 3. =>
+
+
+Response:
+[START]
+location_i = 'countertop 3'
+obj = 'saltshaker'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>On the {location_i}, you see a bowl 2, a houseplant 1, a knife 2, a peppershaker 1, a {obj} 4, a soapbottle 1, a spatula 2, and a tomato 3.<=
+
+obj_IDs_found = ['bowl 2', 'houseplant 1', 'knife 2', 'peppershaker 1', '{obj} 4', 'soapbottle 1', 'spatula 2', 'tomato 3']
+
+obj_number = 4
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the creditcard in the countertop 1. =>
+
+
+Response:
+[START]
+location_i = 'countertop 1'
+obj = 'creditcard'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>On the {location_i}, you see a cellphone 2, a {obj} 4, a {obj} 3, a {obj} 2, a mirror 1, a pencil 2, and a pencil 1.<=
+
+obj_IDs_found = ['cellphone 2', '{obj} 4', '{obj} 3', '{obj} 2', 'mirror 1', 'pencil 2', 'pencil 1']
+
+obj_number = 2
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to put the saltshaker 4 in the drawer 1. =>
+
+
+Response:
+[START]
+target_location_ID = 'drawer 1'
+obj_ID = 'saltshaker 4'
+
+My sub-task is to put the {obj_ID} in the {target_location_ID}.
+
+> go to {target_location_ID} =>The {target_location_ID} is open. In it, you see nothing.<=
+
+> put {obj_ID} in/on {target_location_ID} =>You put the {obj_ID} in/on the {target_location_ID}.<=
+
+Validate: Since I have put the {obj_ID} in the {target_location_ID}, my sub-task is complete.
+print('You have put the {obj_ID} in the {target_location_ID}.')
+[END]

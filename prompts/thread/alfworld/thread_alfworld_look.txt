@@ -1,0 +1,284 @@
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a bed 1, a desk 1, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a safe 1, a shelf 5, a shelf 4, a shelf 3, a shelf 2, a shelf 1, a sidetable 2, and a sidetable 1.
+Your task is to: look at bowl under the desklamp.
+
+
+Response:
+[START]
+look_obj = 'desklamp'
+likely_location_IDs_for_look_obj = ['desk 1', 'sidetable 2', 'sidetable 1', 'shelf 5', 'shelf 4', 'shelf 3', 'shelf 2', 'shelf 1', 'bed 1', 'drawer 3', 'drawer 2', 'drawer 1']
+obj = 'bowl'
+likely_location_IDs_for_obj = ['drawer 3', 'drawer 2', 'drawer 1', 'desk 1', 'sidetable 2', 'sidetable 1', 'shelf 5', 'shelf 4', 'shelf 3', 'shelf 2', 'shelf 1', 'bed 1', 'garbagecan 1']
+
+I need to perform the following 2 steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID}.<=
+
+Next, I need to find and use the {look_obj} to look at the {obj_ID}. =>You have found and used the {look_obj_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a bed 1, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a shelf 9, a shelf 8, a shelf 7, a shelf 6, a shelf 5, a shelf 4, a shelf 3, a shelf 2, and a shelf 1.
+Your task is to: examine the pen with the desklamp.
+
+
+Response:
+[START]
+look_obj = 'desklamp'
+likely_location_IDs_for_look_obj = ['dresser 1', 'shelf 9', 'shelf 8', 'shelf 7', 'shelf 6', 'shelf 5', 'shelf 4', 'shelf 3', 'shelf 2', 'shelf 1', 'bed 1', 'garbagecan 1', 'drawer 10', 'drawer 9', 'drawer 8', 'drawer 7', 'drawer 6', 'drawer 5', 'drawer 4', 'drawer 3', 'drawer 2', 'drawer 1']
+obj = 'pen'
+likely_location_IDs_for_obj = ['drawer 10', 'drawer 9', 'drawer 8', 'drawer 7', 'drawer 6', 'drawer 5', 'drawer 4', 'drawer 3', 'drawer 2', 'drawer 1', 'bed 1','shelf 9', 'shelf 8', 'shelf 7', 'shelf 6', 'shelf 5', 'shelf 4', 'shelf 3', 'shelf 2', 'shelf 1', 'dresser 1', 'garbagecan 1']
+
+I need to perform the following 2 steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID}.<=
+
+Next, I need to find and use the {look_obj} to look at the {obj_ID}. =>You have found and used the {look_obj_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+I need to find and take the bowl. =>
+
+
+Response:
+[START]
+obj = 'bowl'
+
+My sub-task is to find and take the {obj}. I will check the locations in {likely_location_IDs_for_obj} one by one.
+
+location_i = likely_location_IDs_for_obj[0]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[1]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[2]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[3]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[4]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[5]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[6]
+I need to check if there is the {obj} in the {location_i}. =>You have found and taken the {obj_ID} from the {location_i}.<=
+
+You have found and taken the {obj_ID}.
+
+Validate: Since I have found and taken the {obj_ID}, my sub-task is complete.
+print('You have found and taken the {obj_ID}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the bowl in the drawer 1. =>
+
+
+Response:
+[START]
+location_i = 'drawer 1'
+obj = 'bowl'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>The {location_i} is closed.<=
+
+> open {location_i} =>You open the {location_i}. The {location_i} is open. In it, you see a cd 2, and a keychain 1.<=
+
+obj_IDs_found = ['cd 2', 'keychain 1']
+
+obj_number = 'There is no obj_number'
+obj_ID = 'There is no obj_ID'
+
+There is no {obj} in the {location_i}.
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('There is no {obj} in the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the bowl in the shelf 3. =>
+
+
+Response:
+[START]
+location_i = 'shelf 3'
+obj = 'bowl'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>On the {location_i}, you see a {obj} 1, a mug 3, and a plate 2.<=
+
+obj_IDs_found = ['{obj} 1', 'mug 3', 'plate 2']
+
+obj_number = 1
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the pen in the dresser 1. =>
+
+
+Response:
+[START]
+location_i = 'dresser 1'
+obj = 'pen'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>On the {location_i} 1, you see a alarmclock 2, a alarmclock 1, a book 1, a cd 1, a creditcard 1, a desklamp 1, a keychain 2, a {obj} 3, and a {obj} 1.<=
+
+> examine {location_i} =>On the {location_i} 1, you see a alarmclock 2, a alarmclock 1, a book 1, a cd 1, a creditcard 1, a desklamp 1, a keychain 2, a {obj} 3, and a {obj} 1.<=
+
+obj_IDs_found = ['alarmclock 2', 'alarmclock 1', 'book 1', 'cd 1', 'creditcard 1', 'desklamp 1', 'keychain 2', '{obj} 3', '{obj} 1']
+
+obj_number = 3
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to find and use the desklamp to look at the bowl 1. =>
+
+
+Response:
+[START]
+look_obj = 'desklamp'
+obj_ID = 'bowl 1'
+
+My sub-task is to find and use the {look_obj}. I will check the locations in {likely_location_IDs_for_obj} one by one.
+
+location_i = likely_location_IDs_for_look_obj[0]
+I need to check if I can use a {look_obj} at the {location_i}. =>There is no {look_obj} at the {location_i}.<=
+
+location_i = likely_location_IDs_for_look_obj[1]
+I need to check if I can use a {look_obj} at the {location_i}. =>There is no {look_obj} at the {location_i}.<=
+
+location_i = likely_location_IDs_for_look_obj[2]
+I need to check if I can use a {look_obj} at the {location_i}. =>There is no {look_obj} at the {location_i}.<=
+
+location_i = likely_location_IDs_for_look_obj[3]
+I need to check if I can use a {look_obj} at the {location_i}. =>There is no {look_obj} at the {location_i}.<=
+
+location_i = likely_location_IDs_for_look_obj[4]
+I need to check if I can use a {look_obj} at the {location_i}. =>You have found and used the {look_obj_ID} at the {location_i}.<=
+
+You have found and used the {look_obj_ID}.
+
+Validate: Since I have found and used the {look_obj_ID}, my sub-task is complete.
+print('You have found and used the {look_obj_ID}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if I can use a desklamp at the desk 1. =>
+
+
+Response:
+[START]
+location_i = 'desk 1'
+look_obj = 'desklamp'
+
+My sub-task is to check if I can use a {look_obj} at the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>On the {location_i}, you see a nothing.<=
+
+obj_IDs_found = []
+
+look_obj_number = 'There is no look_obj_number'
+look_obj_ID = 'There is no look_obj_ID'
+
+There is no {look_obj_ID} at the {location_i}.
+
+Validate: Since I have checked if I can use a {look_obj} at the {location_i}, my sub-task is complete.
+print('There is no {look_obj_ID} at the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if I can use a desklamp at the sidetable 2. =>
+
+
+Response:
+[START]
+location_i = 'sidetable 2'
+look_obj = 'desklamp'
+
+My sub-task is to check if I can use a {look_obj} at the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>On the {location_i}, you see a alarmclock 1, a {look_obj} 1, and a pen 2.<=
+
+obj_IDs_found = ['alarmclock 1', '{look_obj} 1', 'pen 2']
+
+look_obj_number = 1
+look_obj_ID = look_obj + ' ' + str(look_obj_number)
+
+There is the {look_obj_ID} in the {location_i}.
+
+> use {look_obj_ID} =>You turn on the {look_obj_ID}.<=
+
+Validate: Since I have checked if I can use a {look_obj} at the {location_i}, my sub-task is complete.
+print('You have found and used the {look_obj_ID} at the {location_i}.')
+[END]
