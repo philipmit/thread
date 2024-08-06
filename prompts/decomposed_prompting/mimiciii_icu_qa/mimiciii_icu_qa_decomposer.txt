@@ -1,0 +1,81 @@
+Prompt:
+MIMIC QUESTION: Was the average systolic blood pressure of patient X from hour 10 to 20 of their ICU stay higher or lower than the average among all patients who expired in the hospital?
+
+
+Response:
+#START#
+Here is a table showing the systolic blood pressure of patient X from hour 10 to 20 of their ICU stay: =>data_table.txt<=
+
+Based on the data in data_table.txt the average systolic blood pressure of patient X was =>138.18<= 
+
+The average systolic blood pressure among all patients who expired in the hospital was =>120.81<=
+
+138.18 is higher than 120.81. Therefore, the average systolic blood pressure of patient X from hour 10 to 20 was higher.
+
+Answer choices from question: "higher or lower"
+Final Answer: higher
+#END#
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: For patient X, was the maximum temperature higher or lower compared to patient Z?
+
+
+Response:
+#START#
+Here is a table showing the temperature of patient X and patient Z during their ICU stay: =>data_table.txt<=
+
+Based on the data in data_table.txt the maximum temperature of patient X was =>95.18<= and for patient Z was =>101.43<= 
+
+95.18 is lower than 101.43. Therefore, the maximum temperature of patient X was lower.
+
+Answer choices from question: "higher or lower"
+Final Answer: lower
+#END#
+
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: For patient X, at what timepoint did heart rate decrease the most?
+
+
+Response:
+#START#
+Here is a table showing the heart rate of patient X from hour 0 to 48 of their ICU stay: =>data_table.txt<=
+
+Based on the data in data_table.txt the hour of the biggest decrease in heart rate of patient X was =>22<= 
+
+Final Answer: 22
+#END#
+
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: Is glucose for patient X expected to be above or below the lowest average glucose among patients with diabetes at hour 27 based on the data from hour 11 to 19?
+
+
+Response:
+#START#
+Here is a table showing the glucose of patient X from hour 11 to 19 of their ICU stay: =>data_table.txt<=
+
+Based on the data in data_table.txt the glucose of patient X at hour 27 is expected to be =>51.5<= 
+
+The lowest average glucose among patients with diabetes was =>58.1<=
+
+51.5 is lower than 58.1. Therefore, the glucose of patient X at hour 27 is expected to be lower.
+
+Answer choices from question: "above or below"
+Final Answer: below
+#END#

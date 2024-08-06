@@ -1,0 +1,20 @@
+Prompt:
+Based on the data in data_table.txt the hour of the biggest decrease in heart rate of patient X was =>
+
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+table = pd.read_csv(table_dir, sep='\t')
+
+>>> print(table.columns) =>
+# Index(['Hours', 'Heart Rate'], dtype='object')
+<=
+
+variable_col_name = 'Heart Rate'
+value_diff = np.diff(table[variable_col_name])
+hour_diff_idx_min = np.argmin(value_diff)
+hour_dif_min = round(table['Hours'][hour_diff_idx_min])
+
+print(hour_dif_min)
+#END#
