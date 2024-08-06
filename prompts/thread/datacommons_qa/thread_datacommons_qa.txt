@@ -1,0 +1,350 @@
+Prompt:
+Question: From 2018 to 2021 was the percentage of people with diabetes increasing faster in Willows or Villa Ridge?
+
+
+Response:
+#START#
+Here is a table showing the percentage of people with diabetes during 2018 to 2021 for Willows and Villa Ridge: =>{table_dir}<=.
+
+Based on the data in {table_dir} from 2018 to 2021 the slope of the percentage of people with diabetes in Willows is =>0.3357<= and in Villa Ridge is =>0.1642<=.
+
+Since 0.3357 in Willows is greater than 0.1642 in Villa Ridge, the percentage of people with diabetes is increasing faster in Willows.
+
+Answer choices from question: "Willows or Villa Ridge"
+Final Answer: Willows
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Compared to the national average was the percentage of individuals who have received cholesterol screening in Seattle in 2016 higher or lower?
+
+
+Response:
+#START#
+Here is a table showing the percentage of individuals who have received cholesterol screening during 2016 for Seattle and United States: =>{table_dir}<=.
+
+Based on the data in {table_dir} in 2016 the percentage of individuals who have received cholesterol screening in Seattle is =>7.9<= and in United States is =>6.1<=. 
+
+Since 7.9 in Seattle is greater than 6.1 in United States, the percentage of individuals who have received cholesterol screening in Seattle is higher.
+
+Answer choices from question: "higher or lower"
+Final Answer: higher
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Was the number of people with employer-based health insurance in Belpre increasing or decreasing from 2018 to 2020?
+
+
+Response:
+#START#
+Here is a table showing the number of people with employer-based health insurance during 2018 to 2020 for Belpre: =>{table_dir}<=.
+
+Based on the data in {table_dir} from 2018 to 2020 the slope of the number of people with employer-based health insurance in Belpre is =>-31.5<=.
+
+Since -31.5 is negative, the number of people with employer-based health insurance in Belpre is decreasing.
+
+Answer choices from question: "increasing or decreasing"
+Final Answer: decreasing
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Was there a positive or negative correlation in the prevalence of health insurance coverage in New Jersey and Virginia based on the data from 2019 to 2021?
+
+
+Response:
+#START#
+Here is a table showing the prevalence of health insurance coverage during 2019 to 2021 for New Jersey and Virginia: =>{table_dir}<=.
+
+Based on the data in {table_dir} from 2019 to 2021 the correlation in the prevalence of health insurance coverage in New Jersey and Virginia was =>0.13<=.
+
+Since 0.13 is positive, the correlation in the prevalence of health insurance coverage in New Jersey and Virginia was positive.
+
+Answer choices from question: "positive or negative"
+Final Answer: positive
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Using data from 2019 to 2022 in Pacifica California is the rate of individuals aged 40 to 64 who have health insurance coverage expected to be above or below Loyall Kentucky in 2039?
+
+
+Response:
+#START#
+Here is a table showing the rate of individuals aged 40 to 64 who have health insurance coverage during 2019 to 2022 for Pacifica California and Loyall Kentucky: =>{table_dir}<=.
+
+Based on the data in {table_dir} from 2019 to 2022 the expected value in 2039 of the rate of individuals aged 40 to 64 who have health insurance coverage in Pacifica California is =>61.3<= and in Loyall Kentucky is =>64.9<=.
+
+Since 61.3 in Pacifica California is less than 64.9 in Loyall Kentucky, the rate of individuals aged 40 to 64 who have health insurance coverage in Pacifica California is expected to be below.
+
+Answer choices from question: "above or below"
+Final Answer: below
+#END#
+
+
+
+
+
+
+Prompt:
+Question: From 2014 to 2017 was the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance higher in Blevins Arkansas or CORTLAND New York?
+
+
+Response:
+#START#
+Here is a table showing the prevalence rate of individuals aged 18 to 64 who have health insurance during 2014 to 2017 for Blevins Arkansas and CORTLAND New York: =>{table_dir}<=.
+
+Based on the data in {table_dir} from 2014 to 2017 the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance in Blevins Arkansas is =>50.4<= and in CORTLAND New York is =>57.8<=.
+
+Since 50.4 in Blevins Arkansas is less than 57.8 in CORTLAND New York, the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance is higher in CORTLAND New York.
+
+Answer choices from question: "Blevins Arkansas or CORTLAND New York"
+Final Answer: CORTLAND New York 
+#END#
+
+
+
+
+
+
+Prompt:
+Here is a table showing the percentage of people with diabetes during 2018 to 2021 for Willows and Villa Ridge: =>
+
+
+Response:
+#START#
+location1 = 'Willows'
+location2 = 'Villa Ridge'
+timeframe = '2018 to 2021'
+variable = 'percentage of people with diabetes'
+
+# The {variable} during {timeframe} for location number 1, {location1}, is =>{data_location1_in_timeframe}<=.
+
+# The {variable} during {timeframe} for location number 2, {location2}, is =>{data_location2_in_timeframe}<=.
+
+data_location1_in_timeframe = [data_location1_in_timeframe] if not isinstance(data_location1_in_timeframe, list) else data_location1_in_timeframe
+data_location2_in_timeframe = [data_location2_in_timeframe] if not isinstance(data_location2_in_timeframe, list) else data_location2_in_timeframe
+
+timeframe_dates = np.unique([x['date'] for x in data_location1_in_timeframe] + [x['date'] for x in data_location2_in_timeframe])
+data_location1_in_timeframe_values = []
+data_location2_in_timeframe_values = []
+for time in timeframe_dates:
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location1_in_timeframe_values.append(None)
+    else:
+        data_location1_in_timeframe_values.append([x['value'] for x in data_location1_in_timeframe if x['date']==time][0])
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location2_in_timeframe_values.append(None)
+    else:
+        data_location2_in_timeframe_values.append([x['value'] for x in data_location2_in_timeframe if x['date']==time][0])
+
+table = pd.DataFrame({'date': timeframe_dates, location1: data_location1_in_timeframe_values, location2: data_location2_in_timeframe_values})
+table_dir = DATA_DIR
+table.to_csv(table_dir, sep='\t', index=False)
+
+print('{table_dir}')
+#END#
+
+
+
+
+
+
+Prompt:
+The percentage of people with diabetes during 2018 to 2021 for location number 2, Villa Ridge, is =>
+
+
+Response:
+#START#
+location2 = 'Villa Ridge'
+timeframe = '2018 to 2021'
+time1 = '2018'
+time2 = '2021'
+variable = 'percentage of people with diabetes'
+
+# I need to retreive the {variable} during {timeframe} for location 2, {location2}.
+
+# I will first get the variable_ID and location2_ID.
+
+query = f'{variable} in {location2}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+> print(response['variables']) =>['dc/topic/Diabetes', 'Percent_Person_WithDiabetes', 'Percent_Person_20OrMoreYears_WithDiabetes', 'dc/topic/PopulationWithDiabetesByAge', 'Count_Person_20To79Years_Diabetes_AsFractionOf_Count_Person_20To79Years', 'WHO/SDG_SH_DTH_RNCOM_DiabetesMellitus', 'dc/topic/DiabetesFemalePopulationByAge', 'dc/nh3s4skee5483']<=
+
+variable_ID = 'Percent_Person_WithDiabetes'
+
+> print(response['entities']) =>['geoId/2976192']<=
+
+location2_ID = 'geoId/2976192'
+
+# I will now use the location2_ID and variable_ID to get the data.
+
+data_location2_all = collect_data_commons(location2_ID, variable_ID)
+data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+> print(data_location2_in_timeframe) =>[{'date': '2018', 'value': 10.1}, {'date': '2020', 'value': 10.8}, {'date': '2021', 'value': 11.1}]<=
+
+print('{data_location2_in_timeframe}')
+#END#
+
+
+
+
+
+
+Prompt:
+Based on the data in data_table.txt from 2018 to 2021 the slope of the percentage of people with diabetes in Willows is =>0.33571428571428585<= and in Villa Ridge is =>
+
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+variable = 'percentage of people with diabetes'
+location1 = 'Willows'
+location2 = 'Villa Ridge'
+
+# I need to find the slope of the {variable} in {location2} using the data in {table_dir}.
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date  Willows  Villa Ridge
+# 0  2018     10.1          8.2
+# 1  2020     10.8          8.5
+# 2  2021     11.1          8.7
+# <=
+
+location2_col_name = 'Villa Ridge'
+
+X = table['date']
+y = table[location2_col_name]
+slope, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+
+print(slope)
+#END#
+
+
+
+
+
+
+Prompt:
+Based on the data in data_table.txt from 2019 to 2022 the expected value in 2039 of the rate of individuals aged 40 to 64 who have health insurance coverage in Pacifica California is =>61.3<= and in Loyall Kentucky is =>
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+variable = 'rate of individuals aged 40 to 64 who have health insurance coverage'
+location1 = 'Pacifica California'
+location2 = 'Loyall Kentucky'
+future_time = '2039'
+
+# I need to find the expected value in {future_time} the {variable} in {location2} using the data in {table_dir}.
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date  Pacifica California  Loyall Kentucky
+# 0  2019                 48.1             51.2
+# 1  2020                 51.8             53.5
+# 2  2021                 52.1             53.7
+# <=
+
+location2_col_name = 'Villa Ridge'
+
+X = table['date']
+y = table[location2_col_name]
+slope, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+expected_value = slope * int(future_time) + intercept
+
+print(expected_value)
+#END#
+
+
+
+
+
+
+Prompt:
+Based on the data in data_table.txt from 2019 to 2021 the correlation in the prevalence of health insurance coverage in New Jersey and Virginia was =>
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+variable = 'percentage of people with diabetes'
+location1 = 'New Jersey'
+location2 = 'Virginia'
+
+# I need to find the correlation of the {variable} in {location1} and {location2} using the data in {table_dir}.
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date  New Jersey      Virginia
+# 0  2019        60.1          58.2
+# 1  2020        62.8          58.5
+# 2  2021        63.1          58.7
+# <=
+
+location1_col_name = 'New Jersey'
+location2_col_name = 'Virginia'
+
+y1 = table[location1_col_name]
+y2 = table[location2_col_name]
+corr, _ = pearsonr(y1, y2)
+
+print(corr)
+#END#
+
+
+
+
+
+
+Prompt:
+Based on the data in data_table.txt from 2014 to 2017 the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance in Blevins Arkansas is =>50.4<= and in CORTLAND New York is =>
+
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+variable = 'percentage of people with diabetes'
+location1 = 'Blevins Arkansas'
+location2 = 'CORTLAND New York'
+
+# I need to find the value of the {variable} in {location2} using the data in {table_dir}.
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date   Blevins Arkansas   CORTLAND New York
+# 0  2018               50.4                59.9
+# 1  2019               54.9                57.8
+# 2  2020               55.6                59.5
+# <=
+
+location2_col_name = 'CORTLAND New York'
+
+y = table[location2_col_name]
+y_min = np.min(y)
+
+print(y_min)
+#END#
