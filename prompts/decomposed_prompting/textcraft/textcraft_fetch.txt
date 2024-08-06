@@ -1,0 +1,32 @@
+Prompt:
+I first need to check if I can get 6 dark oak planks =>
+
+
+Response:
+#START#
+> get 6 dark oak planks =>Could not find dark oak planks.<=
+
+I cannot get the dark oak planks.
+
+Validate: Since I have checked if I can get dark oak planks, my sub-task is complete.
+print('You cannot get the material.')
+#END#
+
+
+
+
+
+
+Prompt:
+I first need to check if I can get 1 oak logs =>
+
+
+Response:
+#START#
+> get 1 oak logs =>Got 1 oak logs.<=
+
+I got oak logs.
+
+Validate: Since I have checked if I can get oak logs, my sub-task is complete.
+print('You have the material.')
+#END#
