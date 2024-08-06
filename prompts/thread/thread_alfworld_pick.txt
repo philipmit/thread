@@ -1,0 +1,305 @@
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 3, a diningtable 2, a diningtable 1, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sidetable 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.
+Your task is to: find some apple and put it in sidetable.
+
+
+Response:
+[START]
+target_location_ID = 'sidetable 1'
+likely_location_IDs_for_obj = ['fridge 1', 'diningtable 3', 'diningtable 2', 'diningtable 1', 'countertop 1', 'sinkbasin 1', 'garbagecan 1', 'stoveburner 4', 'stoveburner 3', 'stoveburner 2', 'stoveburner 1', 'toaster 1', 'microwave 1', 'cabinet 4', 'cabinet 3', 'cabinet 2', 'cabinet 1', 'coffeemachine 1', 'drawer 1', 'sidetable 1']
+target_location_ID = 'sidetable 1'
+obj = 'apple'
+
+I need to perform the following 2 steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+You are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a countertop 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a sinkbasin 2, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.
+Your task is to: put some spraybottle on toilet.
+
+
+Response:
+[START]
+target_location_ID = 'toilet 1'
+likely_location_IDs_for_obj = ['cabinet 4', 'cabinet 3', 'cabinet 2', 'cabinet 1', 'countertop 1', 'sinkbasin 2', 'sinkbasin 1', 'garbagecan 1', 'towelholder 1', 'handtowelholder 2', 'handtowelholder 1', 'toiletpaperhanger 1', 'toilet 1']
+target_location_ID = 'toilet 1'
+obj = 'spraybottle'
+
+I need to perform the following 2 steps:
+
+First, I need to find and take the {obj}. =>You have found and taken the {obj_ID}.<=
+
+Next, I need to put the {obj_ID} in the {target_location_ID}. =>You have put the {obj_ID} in the {target_location_ID}.<=
+
+[END]
+
+
+
+
+
+
+Prompt:
+I need to find and take the spraybottle. =>
+
+
+Response:
+[START]
+obj = 'spraybottle'
+
+My sub-task is to find and take the {obj}. I will check the locations in {likely_location_IDs_for_obj} one by one.
+
+location_i = likely_location_IDs_for_obj[0]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[1]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[2]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[3]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[4]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[5]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[6]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[7]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[8]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[9]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[10]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[11]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[12]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[13]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[14]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[15]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[16]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[17]
+I need to check if there is the {obj} in the {location_i}. =>There is no {obj} in the {location_i}.<=
+
+location_i = likely_location_IDs_for_obj[18]
+I need to check if there is the {obj} in the {location_i}. =>You have found and taken the {obj_ID} from the {location_i}.<=
+
+You have found and taken the {obj_ID}.
+
+Validate: Since I have found and taken the {obj_ID}, my sub-task is complete.
+print('You have found and taken the {obj_ID}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the apple in the garbagecan 1. =>
+
+
+Response:
+[START]
+location_i = 'garbagecan 1'
+obj = 'apple'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>On the {location_i}, you see a {obj} 3, and a egg 3.<=
+
+obj_IDs_found = ['{obj} 3', 'egg 3']
+
+obj_number = 3
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the apple in the diningtable 3. =>
+
+
+Response:
+[START]
+location_i = 'diningtable 1'
+obj = 'apple'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>Nothing happens.<=
+
+obj_IDs_found = []
+
+obj_number = 'There is no obj_number'
+obj_ID = 'There is no obj_ID'
+
+There is no {obj} in the {location_i}.
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('There is no {obj} in the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the apple in the diningtable 2. =>
+
+
+Response:
+[START]
+location_i = 'diningtable 2'
+obj = 'apple'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>On the {location_i}, you see a pineapple 1.<=
+
+obj_IDs_found = ['pineapple 1']
+
+obj_number = 'There is no obj_number'
+obj_ID = 'There is no obj_ID'
+
+There is no {obj} in the {location_i}.
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('There is no {obj} in the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the spraybottle in the cabinet 1. =>
+
+
+Response:
+[START]
+location_i = 'cabinet 1'
+obj = 'spraybottle'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>The {location_i} is closed.<=
+
+> open {location_i} =>You open the {location_i}. The {location_i} is open. In it, you see a cloth 1, a soapbar 1, a soapbottle 1.<=
+
+obj_IDs_found = ['cloth 1', 'soapbar 1', 'soapbottle 1']
+
+obj_number = 'There is no obj_number'
+obj_ID = 'There is no obj_ID'
+
+There is no {obj} in the {location_i}.
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('There is no {obj} in the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to check if there is the spraybottle in the cabinet 2. =>
+
+
+Response:
+[START]
+location_i = 'cabinet 2'
+obj = 'spraybottle'
+
+My sub-task is to check if there is the {obj} in the {location_i}.
+
+> go to {location_i} =>Nothing happens.<=
+
+> examine {location_i} =>The {location_i} is closed.<=
+
+> open {location_i} =>You open the {location_i}. The {location_i} is open. In it, you see a candle 1, and a {obj} 2.<=
+
+obj_IDs_found = ['candle 1', '{obj} 2']
+
+obj_number = 2
+obj_ID = obj + ' ' + str(obj_number)
+
+There is the {obj_ID} in the {location_i}.
+
+> take {obj_ID} from {location_i} =>You pick up the {obj_ID} from the {location_i}.<=
+
+Validate: Since I have checked if there is the {obj} in the {location_i}, my sub-task is complete.
+print('You have found and taken the {obj_ID} from the {location_i}.')
+[END]
+
+
+
+
+
+
+Prompt:
+I need to put the apple 3 in the sidetable 1. =>
+
+
+Response:
+[START]
+target_location_ID = 'sidetable 1'
+obj_ID = 'apple 3'
+
+My sub-task is to put the {obj_ID} in the {target_location_ID}.
+
+> go to {target_location_ID} =>On the {target_location_ID}, you see a cup 1, a lettuce 1, a peppershaker 3, a potato 1, and a saltshaker 1.<=
+
+> put {obj_ID} on {target_location_ID} =>Nothing happens.<=
+
+> put {obj_ID} in/on {target_location_ID} =>You put the {obj_ID} in/on the {target_location_ID}.<=
+
+Validate: Since I have put the {obj_ID} in the {target_location_ID}, my sub-task is complete.
+print('You have put the {obj_ID} in the {target_location_ID}.')
+[END]
