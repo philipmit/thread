@@ -1,0 +1,34 @@
+Prompt:
+The percentage of people with diabetes during 2018 to 2021 for location number 2, Villa Ridge, is =>
+
+
+Response:
+#START#
+# I will first get the variable_ID and location2_ID.
+
+location2 = 'Villa Ridge'
+variable = 'percentage of people with diabetes'
+time1 = '2018'
+time2 = '2021'
+
+query = f'{variable} in {location2}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+> print(response['variables']) =>['dc/topic/Diabetes', 'Percent_Person_WithDiabetes', 'Percent_Person_20OrMoreYears_WithDiabetes', 'dc/topic/PopulationWithDiabetesByAge', 'Count_Person_20To79Years_Diabetes_AsFractionOf_Count_Person_20To79Years', 'WHO/SDG_SH_DTH_RNCOM_DiabetesMellitus', 'dc/topic/DiabetesFemalePopulationByAge', 'dc/nh3s4skee5483']<=
+
+variable_ID = 'Percent_Person_WithDiabetes'
+
+> print(response['entities']) =>['geoId/2976192']<=
+
+location2_ID = 'geoId/2976192'
+
+# I will now use the location2_ID and variable_ID to get the data.
+
+data_location2_all = collect_data_commons(location2_ID, variable_ID)
+data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+> print(data_location2_in_timeframe) =>[{'date': '2018', 'value': 10.1}, {'date': '2020', 'value': 10.8}, {'date': '2021', 'value': 11.1}]<=
+
+print('{data_location2_in_timeframe}')
+#END#

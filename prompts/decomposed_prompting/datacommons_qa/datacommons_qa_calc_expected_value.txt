@@ -1,0 +1,25 @@
+Prompt:
+Based on the data in data_table.txt from 2019 to 2022 the expected value in 2039 of the rate of individuals aged 40 to 64 who have health insurance coverage in Pacifica California is =>61.3<= and in Loyall Kentucky is =>
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date  Pacifica California  Loyall Kentucky
+# 0  2019                 48.1             51.2
+# 1  2020                 51.8             53.5
+# 2  2021                 52.1             53.7
+# <=
+
+location2_col_name = 'Villa Ridge'
+
+X = table['date']
+y = table[location2_col_name]
+slope, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+expected_value = slope * int(future_time) + intercept
+
+print(expected_value)
+#END#

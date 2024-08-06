@@ -1,0 +1,35 @@
+Prompt:
+Here is a table showing the percentage of people with diabetes during 2018 to 2021 for Willows and Villa Ridge: =>
+
+
+Response:
+#START#
+# The percentage of people with diabetes during 2018 to 2021 for location number 1, Willows, is =>data_location1_in_timeframe<=.
+
+# The percentage of people with diabetes during 2018 to 2021 for location number 2, Villa Ridge, is =>data_location2_in_timeframe<=.
+
+data_location1_in_timeframe = [data_location1_in_timeframe] if not isinstance(data_location1_in_timeframe, list) else data_location1_in_timeframe
+data_location2_in_timeframe = [data_location2_in_timeframe] if not isinstance(data_location2_in_timeframe, list) else data_location2_in_timeframe
+
+timeframe_dates = np.unique([x['date'] for x in data_location1_in_timeframe] + [x['date'] for x in data_location2_in_timeframe])
+data_location1_in_timeframe_values = []
+data_location2_in_timeframe_values = []
+for time in timeframe_dates:
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location1_in_timeframe_values.append(None)
+    else:
+        data_location1_in_timeframe_values.append([x['value'] for x in data_location1_in_timeframe if x['date']==time][0])
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location2_in_timeframe_values.append(None)
+    else:
+        data_location2_in_timeframe_values.append([x['value'] for x in data_location2_in_timeframe if x['date']==time][0])
+
+location1 = 'Willows'
+location2 = 'Villa Ridge'
+
+table = pd.DataFrame({'date': timeframe_dates, location1: data_location1_in_timeframe_values, location2: data_location2_in_timeframe_values})
+table_dir = DATA_DIR
+table.to_csv(table_dir, sep='\t', index=False)
+
+print('{table_dir}')
+#END#

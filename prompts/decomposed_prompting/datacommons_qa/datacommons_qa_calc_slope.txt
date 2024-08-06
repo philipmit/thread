@@ -1,0 +1,25 @@
+Prompt:
+Based on the data in data_table.txt from 2018 to 2021 the slope of the percentage of people with diabetes in Willows is =>0.33571428571428585<= and in Villa Ridge is =>
+
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date  Willows  Villa Ridge
+# 0  2018     10.1          8.2
+# 1  2020     10.8          8.5
+# 2  2021     11.1          8.7
+# <=
+
+location2_col_name = 'Villa Ridge'
+
+X = table['date']
+y = table[location2_col_name]
+slope, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+
+print(slope)
+#END#

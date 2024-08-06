@@ -1,0 +1,24 @@
+Prompt:
+Based on the data in data_table.txt from 2014 to 2017 the minimum value of the prevalence rate of individuals aged 18 to 64 who have health insurance in Blevins Arkansas is =>50.4<= and in CORTLAND New York is =>
+
+
+Response:
+#START#
+table_dir = 'data_table.txt'
+
+table = pd.read_csv(table_dir, sep='\t')
+
+> print(table) =>
+#    date   Blevins Arkansas   CORTLAND New York
+# 0  2018               50.4                59.9
+# 1  2019               54.9                57.8
+# 2  2020               55.6                59.5
+# <=
+
+location2_col_name = 'CORTLAND New York'
+
+y = table[location2_col_name]
+y_min = np.min(y)
+
+print(y_min)
+#END#
