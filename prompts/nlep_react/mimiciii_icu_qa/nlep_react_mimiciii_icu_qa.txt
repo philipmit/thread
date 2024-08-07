@@ -1,0 +1,293 @@
+Prompt:
+MIMIC QUESTION: Was the average systolic blood pressure of patient X from hour 10 to 20 of their ICU stay higher or lower than the average among all patients who expired in the hospital?
+
+
+Response:
+#START#
+time1 = 0
+time2 = 48
+patient1_ID = 'X'
+variable = 'systolic blood pressure'
+
+data_patient1=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(patient1_ID)+"_episode1_timeseries.csv")
+
+> print(data_patient1.columns) =>
+# Index(['Hours', 'Capillary refill rate', 'Diastolic blood pressure',
+#        'Fraction inspired oxygen', 'Glascow coma scale eye opening',
+#        'Glascow coma scale motor response', 'Glascow coma scale total',
+#        'Glascow coma scale verbal response', 'Glucose', 'Heart Rate', 'Height',
+#        'Mean blood pressure', 'Oxygen saturation', 'Respiratory rate',
+#        'Systolic blood pressure', 'Temperature', 'Weight', 'pH'],
+#       dtype='object')
+# <=
+
+variable_col_name = 'Systolic blood pressure'
+data_patient1 = data_patient1[['Hours', variable_col_name]]
+data_patient1 = data_patient1.dropna(subset=[variable_col_name])
+table = data_patient1[(data_patient1['Hours']>=time1) & (data_patient1['Hours']<=time2)]
+
+>>> print(table.columns) =>
+# Index(['Hours', 'Systolic blood pressure'], dtype='object')
+<=
+
+y1 = table[variable_col_name]
+y1 = [x for x in y1 if not math.isnan(x)]
+y1 = [x for x in y1 if not None]
+y1_mean = np.mean(y1)
+y1_mean = round(y1_mean, 2)
+
+
+table_all_patients = pd.read_csv(MIMIC_DATA_DIR+'/all_stays.csv')
+
+> print(table_all_patients.columns) =>
+# Index(['SUBJECT_ID', 'HADM_ID', 'ICUSTAY_ID', 'LAST_CAREUNIT', 'DBSOURCE',
+#        'INTIME', 'OUTTIME', 'LOS', 'ADMITTIME', 'DISCHTIME', 'DEATHTIME',
+#        'ETHNICITY', 'DIAGNOSIS', 'GENDER', 'DOB', 'DOD', 'AGE',
+#        'MORTALITY_INUNIT', 'MORTALITY', 'MORTALITY_INHOSPITAL'],
+#       dtype='object')
+# <=
+
+filter_col_name = 'MORTALITY_INHOSPITAL'
+target_patient_group_IDs = list(table_all_patients[table_all_patients[filter_col_name]==1]['SUBJECT_ID'])
+target_patient_group_IDs = np.unique(target_patient_group_IDs)
+
+target_value_patient_list = []
+for idx in range(len(target_patient_group_IDs)):
+    try:
+        data_patient=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(target_patient_group_IDs[idx])+"_episode1_timeseries.csv")
+        data_patient = data_patient[['Hours', variable_col_name]]
+        data_patient = data_patient.dropna(subset=[variable_col_name])
+        if len(data_patient)<=2:
+            continue
+        target_value_patient_list.append(np.mean(list(data_patient[variable_col_name])))
+    except Exception as e:
+        continue
+
+target_value_patient_list_mean = np.mean(target_value_patient_list)
+target_value_patient_list_mean = round(target_value_patient_list_mean, 2)
+
+
+if y_mean > target_value_patient_list_mean:
+    print('Final Answer: Higher')
+else:
+    print('Final Answer: Lower')
+#END#
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: Is glucose for patient X expected to be above or below the lowest average glucose among patients with diabetes at hour 27 based on the data from hour 11 to 19?
+
+
+Response:
+#START#
+time1 = 11
+time2 = 19
+future_time = 27
+patient1_ID = 'X'
+variable = 'glucose'
+
+data_patient1=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(patient1_ID)+"_episode1_timeseries.csv")
+
+> print(data_patient1.columns) =>
+# Index(['Hours', 'Capillary refill rate', 'Diastolic blood pressure',
+#        'Fraction inspired oxygen', 'Glascow coma scale eye opening',
+#        'Glascow coma scale motor response', 'Glascow coma scale total',
+#        'Glascow coma scale verbal response', 'Glucose', 'Heart Rate', 'Height',
+#        'Mean blood pressure', 'Oxygen saturation', 'Respiratory rate',
+#        'Systolic blood pressure', 'Temperature', 'Weight', 'pH'],
+#       dtype='object')
+# <=
+
+variable_col_name = 'Systolic blood pressure'
+data_patient1 = data_patient1[['Hours', variable_col_name]]
+data_patient1 = data_patient1.dropna(subset=[variable_col_name])
+table = data_patient1[(data_patient1['Hours']>=time1) & (data_patient1['Hours']<=time2)]
+
+> print(table.columns) =>
+# Index(['Hours', 'Glucose'], dtype='object')
+# <=
+
+variable_col_name = 'Glucose'
+X = table['Hours']
+y = table[variable_col_name]
+slope, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+expected_value1 = slope * int(future_time) + intercept
+expected_value1 = round(expected_value1, 2)
+
+pheno = pd.read_csv(MIMIC_DATA_DIR+'/phenotype_labels.csv')
+table_all_patients = pd.read_csv(MIMIC_DATA_DIR+'/all_stays.csv')
+table_all_patients = pd.concat([table_all_patients[['SUBJECT_ID']], pheno], axis=1)
+
+> print(table_all_patients.columns) =>
+# Index(['SUBJECT_ID', 'Acute and unspecified renal failure',
+#        'Acute cerebrovascular disease', 'Acute myocardial infarction',
+#        'Cardiac dysrhythmias', 'Chronic kidney disease',
+#        'Chronic obstructive pulmonary disease and bronchiectasis',
+#        'Complications of surgical procedures or medical care',
+#        'Conduction disorders', 'Congestive heart failure; nonhypertensive',
+#        'Coronary atherosclerosis and other heart disease',
+#        'Diabetes mellitus with complications',
+#        'Diabetes mellitus without complication',
+#        'Disorders of lipid metabolism', 'Essential hypertension',
+#        'Fluid and electrolyte disorders', 'Gastrointestinal hemorrhage',
+#        'Hypertension with complications and secondary hypertension',
+#        'Other liver diseases', 'Other lower respiratory disease',
+#        'Other upper respiratory disease',
+#        'Pleurisy; pneumothorax; pulmonary collapse',
+#        'Pneumonia (except that caused by tuberculosis or sexually transmitted disease)',
+#        'Respiratory failure; insufficiency; arrest (adult)',
+#        'Septicemia (except in labor)', 'Shock'],
+#       dtype='object')
+# <=
+
+filter_col_name = 'Diabetes mellitus with complications'
+target_patient_group_IDs = list(table_all_patients[table_all_patients[filter_col_name]==1]['SUBJECT_ID'])
+target_patient_group_IDs = np.unique(target_patient_group_IDs)
+
+target_value_patient_list = []
+for idx in range(len(target_patient_group_IDs)):
+    try:
+        data_patient=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(target_patient_group_IDs[idx])+"_episode1_timeseries.csv")
+        data_patient = data_patient[['Hours', variable_col_name]]
+        data_patient = data_patient.dropna(subset=[variable_col_name])
+        if len(data_patient)<=2:
+            continue
+        target_value_patient_list.append(np.mean(list(data_patient[variable_col_name])))
+    except Exception as e:
+        continue
+
+target_value_patient_list_min = np.min(target_value_patient_list)
+target_value_patient_list_min = round(target_value_patient_list_min, 2)
+
+
+if expected_value > target_value_patient_list_min:
+    print('Final Answer: Above')
+else:
+    print('Final Answer: Below')
+#END#
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: For patient X, at what timepoint did heart rate decrease the most?
+
+
+Response:
+#START#
+patient1_ID = 'X'
+variable = 'heart rate'
+
+data_patient1=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(patient1_ID)+"_episode1_timeseries.csv")
+
+> print(data_patient1.columns) =>
+# Index(['Hours', 'Capillary refill rate', 'Diastolic blood pressure',
+#        'Fraction inspired oxygen', 'Glascow coma scale eye opening',
+#        'Glascow coma scale motor response', 'Glascow coma scale total',
+#        'Glascow coma scale verbal response', 'Glucose', 'Heart Rate', 'Height',
+#        'Mean blood pressure', 'Oxygen saturation', 'Respiratory rate',
+#        'Systolic blood pressure', 'Temperature', 'Weight', 'pH'],
+#       dtype='object')
+# <=
+
+variable_col_name = 'Heart rate'
+data_patient1 = data_patient1[['Hours', variable_col_name]]
+data_patient1 = data_patient1.dropna(subset=[variable_col_name])
+table = data_patient1
+
+>>> print(table.columns) =>
+# Index(['Hours', 'Heart Rate'], dtype='object')
+<=
+
+variable_col_name = 'Heart Rate'
+value_diff = np.diff(table[variable_col_name])
+hour_diff_idx_min = np.argmin(value_diff)
+hour_dif_min = round(table['Hours'][hour_diff_idx_min])
+
+print(hour_dif_min)
+#END#
+
+
+
+
+
+
+Prompt:
+MIMIC QUESTION: For patient X, was the maximum temperature higher or lower compared to patient Z?
+
+
+Response:
+#START#
+patient1_ID = 'X'
+patient2_ID = 'Z'
+variable = 'temperature'
+
+data_patient1=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(patient1_ID)+"_episode1_timeseries.csv")
+
+> print(data_patient1.columns) =>
+# Index(['Hours', 'Capillary refill rate', 'Diastolic blood pressure',
+#        'Fraction inspired oxygen', 'Glascow coma scale eye opening',
+#        'Glascow coma scale motor response', 'Glascow coma scale total',
+#        'Glascow coma scale verbal response', 'Glucose', 'Heart Rate', 'Height',
+#        'Mean blood pressure', 'Oxygen saturation', 'Respiratory rate',
+#        'Systolic blood pressure', 'Temperature', 'Weight', 'pH'],
+#       dtype='object')
+# <=
+
+variable_col_name = 'Temperature'
+data_patient1 = data_patient1[['Hours', variable_col_name]]
+data_patient1 = data_patient1.dropna(subset=[variable_col_name])
+table = data_patient1
+
+>>> print(table.columns) =>
+# Index(['Hours', 'Temperature'], dtype='object')
+<=
+
+y1 = table[variable_col_name]
+y1 = [x for x in y1 if not math.isnan(x)]
+y1 = [x for x in y1 if not None]
+y1_max = np.max(y1)
+y1_max = round(y1_max, 2)
+
+
+data_patient2=pd.read_csv(MIMIC_DATA_DIR + "/in-hospital-mortality/all/"+str(patient2_ID)+"_episode1_timeseries.csv")
+
+> print(data_patient2.columns) =>
+# Index(['Hours', 'Capillary refill rate', 'Diastolic blood pressure',
+#        'Fraction inspired oxygen', 'Glascow coma scale eye opening',
+#        'Glascow coma scale motor response', 'Glascow coma scale total',
+#        'Glascow coma scale verbal response', 'Glucose', 'Heart Rate', 'Height',
+#        'Mean blood pressure', 'Oxygen saturation', 'Respiratory rate',
+#        'Systolic blood pressure', 'Temperature', 'Weight', 'pH'],
+#       dtype='object')
+# <=
+
+variable_col_name = 'Temperature'
+data_patient2 = data_patient2[['Hours', variable_col_name]]
+data_patient2 = data_patient2.dropna(subset=[variable_col_name])
+table = data_patient2
+
+>>> print(table.columns) =>
+# Index(['Hours', 'Temperature'], dtype='object')
+<=
+
+y2 = table[variable_col_name]
+y2 = [x for x in y2 if not math.isnan(x)]
+y2 = [x for x in y2 if not None]
+y2_max = np.max(y2)
+y2_max = round(y2_max, 2)
+
+if y1_max > y2_max:
+    print('Final Answer: Higher')
+else:
+    print('Final Answer: Lower')
+#END#
+
+
+
