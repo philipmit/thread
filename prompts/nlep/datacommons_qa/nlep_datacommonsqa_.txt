@@ -1,0 +1,251 @@
+Prompt:
+Question: From 2018 to 2021 was the percentage of people with diabetes increasing faster in Willows or Villa Ridge?
+
+
+Response:
+#START#
+time1 = '2018'
+time2 = '2021'
+variable = 'percentage of people with diabetes'
+
+location1 = 'Willows'
+
+# I will first get the variable_ID and location1_ID.
+
+query = f'{variable} in {location1}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location1_ID = response['entities']
+
+# I will now use the location1_ID and variable_ID to get the data.
+
+data_location1_all = collect_data_commons(location1_ID, variable_ID)
+data_location1_in_timeframe = [x for x in data_location1_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+location2 = 'Villa Ridge'
+
+# I will first get the variable_ID and location2_ID.
+
+query = f'{variable} in {location2}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location2_ID = response['entities']
+
+# I will now use the location2_ID and variable_ID to get the data.
+
+data_location2_all = collect_data_commons(location2_ID, variable_ID)
+data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+data_location1_in_timeframe = [data_location1_in_timeframe] if not isinstance(data_location1_in_timeframe, list) else data_location1_in_timeframe
+data_location2_in_timeframe = [data_location2_in_timeframe] if not isinstance(data_location2_in_timeframe, list) else data_location2_in_timeframe
+
+timeframe_dates = np.unique([x['date'] for x in data_location1_in_timeframe] + [x['date'] for x in data_location2_in_timeframe])
+data_location1_in_timeframe_values = []
+data_location2_in_timeframe_values = []
+for time in timeframe_dates:
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location1_in_timeframe_values.append(None)
+    else:
+        data_location1_in_timeframe_values.append([x['value'] for x in data_location1_in_timeframe if x['date']==time][0])
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location2_in_timeframe_values.append(None)
+    else:
+        data_location2_in_timeframe_values.append([x['value'] for x in data_location2_in_timeframe if x['date']==time][0])
+
+table = pd.DataFrame({'date': timeframe_dates, location1: data_location1_in_timeframe_values, location2: data_location2_in_timeframe_values})
+
+location1_col_name = 'Willows'
+
+X = table['date']
+y = table[location1_col_name]
+slope1, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+
+
+location2_col_name = 'Villa Ridge'
+
+X = table['date']
+y = table[location2_col_name]
+slope2, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+
+
+if slope1 > slope2:
+    print('Final Answer: '+ location1)
+else:
+    print('Final Answer: '+ location2)
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Was there a positive or negative correlation in the prevalence of health insurance coverage in New Jersey and Virginia based on the data from 2019 to 2021?
+
+
+Response:
+#START#
+time1 = '2019'
+time2 = '2021'
+variable = 'prevalence of health insurance coverage'
+
+location1 = 'New Jersey'
+
+# I will first get the variable_ID and location1_ID.
+
+query = f'{variable} in {location1}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location1_ID = response['entities'][0]
+
+# I will now use the location1_ID and variable_ID to get the data.
+
+data_location1_all = collect_data_commons(location1_ID, variable_ID)
+data_location1_in_timeframe = [x for x in data_location1_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+location2 = 'Virginia'
+
+# I will first get the variable_ID and location2_ID.
+
+query = f'{variable} in {location2}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location2_ID = response['entities'][0]
+
+# I will now use the location2_ID and variable_ID to get the data.
+
+data_location2_all = collect_data_commons(location2_ID, variable_ID)
+data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+data_location1_in_timeframe = [data_location1_in_timeframe] if not isinstance(data_location1_in_timeframe, list) else data_location1_in_timeframe
+data_location2_in_timeframe = [data_location2_in_timeframe] if not isinstance(data_location2_in_timeframe, list) else data_location2_in_timeframe
+
+timeframe_dates = np.unique([x['date'] for x in data_location1_in_timeframe] + [x['date'] for x in data_location2_in_timeframe])
+data_location1_in_timeframe_values = []
+data_location2_in_timeframe_values = []
+for time in timeframe_dates:
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location1_in_timeframe_values.append(None)
+    else:
+        data_location1_in_timeframe_values.append([x['value'] for x in data_location1_in_timeframe if x['date']==time][0])
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location2_in_timeframe_values.append(None)
+    else:
+        data_location2_in_timeframe_values.append([x['value'] for x in data_location2_in_timeframe if x['date']==time][0])
+
+table = pd.DataFrame({'date': timeframe_dates, location1: data_location1_in_timeframe_values, location2: data_location2_in_timeframe_values})
+
+location1_col_name = 'New Jersey'
+location2_col_name = 'Virginia'
+
+y1 = table[location1_col_name]
+y2 = table[location2_col_name]
+corr, _ = pearsonr(y1, y2)
+
+
+if corr > 0:
+    print('Final Answer: Positive')
+else:
+    print('Final Answer: Negative')
+#END#
+
+
+
+
+
+
+Prompt:
+Question: Using data from 2019 to 2022 in Pacifica California is the rate of individuals aged 40 to 64 who have health insurance coverage expected to be above or below Loyall Kentucky in 2039?
+
+
+Response:
+#START#
+time1 = '2019'
+time2 = '2022'
+variable = 'the rate of individuals aged 40 to 64 who have health insurance coverage'
+
+location1 = 'Pacifica California'
+
+# I will first get the variable_ID and location1_ID.
+
+query = f'{variable} in {location1}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location1_ID = response['entities']
+
+# I will now use the location1_ID and variable_ID to get the data.
+
+data_location1_all = collect_data_commons(location1_ID, variable_ID)
+data_location1_in_timeframe = [x for x in data_location1_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+location2 = 'Loyall Kentucky'
+
+# I will first get the variable_ID and location2_ID.
+
+query = f'{variable} in {location2}'
+response = requests.post(URL_EXPLORE + '?q=' + query, headers=HEADERS, json=JSON)
+response = json.loads(response.text)
+
+variable_ID = response['variables'][1]
+
+location2_ID = response['entities']
+
+# I will now use the location2_ID and variable_ID to get the data.
+
+data_location2_all = collect_data_commons(location2_ID, variable_ID)
+data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
+
+data_location1_in_timeframe = [data_location1_in_timeframe] if not isinstance(data_location1_in_timeframe, list) else data_location1_in_timeframe
+data_location2_in_timeframe = [data_location2_in_timeframe] if not isinstance(data_location2_in_timeframe, list) else data_location2_in_timeframe
+
+timeframe_dates = np.unique([x['date'] for x in data_location1_in_timeframe] + [x['date'] for x in data_location2_in_timeframe])
+data_location1_in_timeframe_values = []
+data_location2_in_timeframe_values = []
+for time in timeframe_dates:
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location1_in_timeframe_values.append(None)
+    else:
+        data_location1_in_timeframe_values.append([x['value'] for x in data_location1_in_timeframe if x['date']==time][0])
+    if time not in [x['date'] for x in data_location1_in_timeframe]:
+        data_location2_in_timeframe_values.append(None)
+    else:
+        data_location2_in_timeframe_values.append([x['value'] for x in data_location2_in_timeframe if x['date']==time][0])
+
+table = pd.DataFrame({'date': timeframe_dates, location1: data_location1_in_timeframe_values, location2: data_location2_in_timeframe_values})
+
+location1_col_name = 'Pacifica California'
+
+X = table['date']
+y = table[location1_col_name]
+slope1, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+expected_value1 = slope1 * int(future_time) + intercept
+
+
+location2_col_name = 'Loyall Kentucky'
+
+X = table['date']
+y = table[location2_col_name]
+slope2, intercept, r_value, p_value, std_err = stats.linregress(X, y)
+expected_value2 = slope2 * int(future_time) + intercept
+
+
+if expected_value1 > expected_value2:
+    print('Final Answer: Above')
+else:
+    print('Final Answer: Below')
+#END#
