@@ -196,15 +196,14 @@ variable_ID = 'Percent_Person_WithDiabetes'
 location2_ID = 'geoId/2976192'
 
 # I will now use the location2_ID and variable_ID to get the data.
-url = "https://api.datacommons.org/v2/observation"
 params = {
-"key": "AIzaSyCTI4Xz-UW_G2Q2RfknhcfdAnTHq5X5XuI",
+"key": API_KEY,
 "entity.dcids": location2_ID, 
 "select": ["entity", "variable", "value", "date"],
 "variable.dcids": variable_ID 
 }
-response = requests.get(url, params=params)
-obs_data = json.loads(response.text)
+obs_data = requests.get(URL_OBS, params=params)
+obs_data = json.loads(obs_data.text)
 data_location2_all = obs_data["byVariable"][variable_ID]["byEntity"][location2_ID]
 if "orderedFacets" not in list(data_location2_all.keys()):
     return None
