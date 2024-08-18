@@ -196,8 +196,20 @@ variable_ID = 'Percent_Person_WithDiabetes'
 location2_ID = 'geoId/2976192'
 
 # I will now use the location2_ID and variable_ID to get the data.
+url = "https://api.datacommons.org/v2/observation"
+params = {
+"key": "AIzaSyCTI4Xz-UW_G2Q2RfknhcfdAnTHq5X5XuI",
+"entity.dcids": location2_ID, 
+"select": ["entity", "variable", "value", "date"],
+"variable.dcids": variable_ID 
+}
+response = requests.get(url, params=params)
+obs_data = json.loads(response.text)
+data_location2_all = obs_data["byVariable"][variable_ID]["byEntity"][location2_ID]
+if "orderedFacets" not in list(data_location2_all.keys()):
+    return None
+data_location2_all = data_location2_all["orderedFacets"][0]['observations']
 
-data_location2_all = collect_data_commons(location2_ID, variable_ID)
 data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
 
 > print(data_location2_in_timeframe) =>[{'date': '2018', 'value': 10.1}, {'date': '2020', 'value': 10.8}, {'date': '2021', 'value': 11.1}]<=
