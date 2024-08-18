@@ -204,10 +204,7 @@ params = {
 }
 obs_data = requests.get(URL_OBS, params=params)
 obs_data = json.loads(obs_data.text)
-data_location2_all = obs_data["byVariable"][variable_ID]["byEntity"][location2_ID]
-if "orderedFacets" not in list(data_location2_all.keys()):
-    return None
-data_location2_all = data_location2_all["orderedFacets"][0]['observations']
+data_location2_all = obs_data["byVariable"][variable_ID]["byEntity"][location2_ID]["orderedFacets"][0]['observations']
 
 data_location2_in_timeframe = [x for x in data_location2_all if (int(x['date'])>=int(time1) and int(x['date'])<=int(time2))]
 
